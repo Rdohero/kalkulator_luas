@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kalkulator_luas/Home.dart';
+import 'package:kalkulator_luas/BottomNavigator.dart';
 import 'package:kalkulator_luas/LoginScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
     String? val = await pref.getString("Token");
     if (val != null) {
       setState(() {
-        login = Home();
+        login = BottomNavigator();
       });
     } else {
       setState(() {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kalkulator_luas/Api/ApiBangunDatar.dart';
-import 'package:kalkulator_luas/NavigatorDrawer.dart';
 import 'package:get/get.dart';
 import 'package:kalkulator_luas/Calculate Luas/LuasBelahKetupat.dart';
 import 'package:kalkulator_luas/Calculate Luas/LuasJajarGenjang.dart';
@@ -46,7 +45,6 @@ class _HomeState extends State<Home> {
               TextStyle(color: Color(0xFF9DFDC7), fontFamily: 'IBM_Plex_Mono'),
         ),
       ),
-      drawer: const NavigatorDrawers(),
       body: MyGridView(futureBangunList),
     );
   }

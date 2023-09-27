@@ -1,3 +1,3 @@
 class CalculateLuasApi {
-  static final String baseUrl = 'https://ad67-43-252-106-166.ngrok-free.app';
+  static final String baseUrl = 'https://fb27-180-253-64-147.ngrok-free.app';
 }

@@ -8,7 +8,7 @@ class Api {
   static Future<http.Response> loginUser(String email, String password) async {
     final response = await http.post(
       Uri.parse(CalculateLuasApi.baseUrl + '/login'),
-      body: {'Email': email, 'password': password},
+      body: {'Email' : email, 'Password': password},
     );
 
     if (response.statusCode == 200) {
@@ -21,11 +21,15 @@ class Api {
     return response;
   }
 
-  static Future<http.Response> registerUser(String email, String password) async {
+  static Future<http.Response> registerUser(String fullname, String username, String email, String password) async {
     final response = await http.post(
       Uri.parse(CalculateLuasApi.baseUrl + '/signup'),
-      body: {'Email': email,
-              'password': password},
+      body: {
+        'Fullname': fullname,
+        'Username': username,
+        'Email': email,
+        'Password': password,
+      },
     );
     return response;
   }

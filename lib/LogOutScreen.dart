@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kalkulator_luas/LoginScreen.dart';
-import 'package:kalkulator_luas/NavigatorDrawer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LogOuteScreen extends StatefulWidget {
@@ -32,7 +31,6 @@ class _LogOuteScreenState extends State<LogOuteScreen> {
               color: Color(0xFF9DFDC7), fontFamily: 'IBM_Plex_Mono'),
         ),
       ),
-      drawer: const NavigatorDrawers(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

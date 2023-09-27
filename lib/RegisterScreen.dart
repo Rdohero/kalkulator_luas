@@ -4,14 +4,18 @@ import 'package:kalkulator_luas/Widget/TextFieldWidget.dart';
 import 'package:kalkulator_luas/Api/LoginRegisterApi.dart';
 
 class RegisterScreen extends StatelessWidget {
+  final TextEditingController fullnameController = TextEditingController();
+  final TextEditingController usernameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
   Future<void> register(BuildContext context) async {
+    final fullname = fullnameController.text;
+    final username = usernameController.text;
     final email = emailController.text;
     final password = passwordController.text;
 
-    final response = await Api.registerUser(email, password);
+    final response = await Api.registerUser(fullname, username, email, password);
 
     if (response.statusCode == 200) {
       Get.back();
@@ -51,6 +55,18 @@ class RegisterScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              myTextField(
+                fullnameController,
+                'Full Name',
+                false,
+                TextInputType.text,
+              ),
+              myTextField(
+                usernameController,
+                'Username',
+                false,
+                TextInputType.text,
+              ),
               myTextField(
                 emailController,
                 'Email',

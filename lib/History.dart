@@ -10,7 +10,6 @@ import 'package:kalkulator_luas/History/HistoryLuasPersegiPanjang.dart';
 import 'package:kalkulator_luas/History/HistoryLuasSegitiga.dart';
 import 'package:kalkulator_luas/History/HistoryLuasTrapesium.dart';
 import 'package:kalkulator_luas/Home.dart';
-import 'package:kalkulator_luas/NavigatorDrawer.dart';
 
 class History extends StatefulWidget {
   const History({super.key});
@@ -47,7 +46,6 @@ class _HistoryState extends State<History> {
               TextStyle(color: Color(0xFF9DFDC7), fontFamily: 'IBM_Plex_Mono'),
         ),
       ),
-      drawer: const NavigatorDrawers(),
       body: MyGridView(futureBangunList),
     );
   }

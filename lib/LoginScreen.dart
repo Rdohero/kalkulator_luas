@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kalkulator_luas/BottomNavigator.dart';
 import 'package:kalkulator_luas/Widget/TextFieldWidget.dart';
-import 'package:kalkulator_luas/Home.dart';
 import 'package:kalkulator_luas/Api/LoginRegisterApi.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:kalkulator_luas/RegisterScreen.dart';
@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
       final token = Api.tok1;
       final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
       sharedPreferences.setString("Token", token);
-      Get.off(Home());
+      Get.off(BottomNavigator());
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Login failed')),
