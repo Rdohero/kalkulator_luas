@@ -27,10 +27,11 @@ class _LoginScreenState extends State<LoginScreen> {
       final token = Api.tok1;
       final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
       sharedPreferences.setString("Token", token);
-      Get.off(BottomNavigator());
+      Get.off(() => BottomNavigator());
     } else {
+      final error = Api.eror2;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Login failed')),
+        SnackBar(content: Text(error)),
       );
     }
   }

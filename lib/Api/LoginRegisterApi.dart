@@ -4,6 +4,7 @@ import 'package:kalkulator_luas/Api/ApiUtama.dart';
 
 class Api {
   static var tok1 = "";
+  static var eror2 = "";
 
   static Future<http.Response> loginUser(String email, String password) async {
     final response = await http.post(
@@ -15,7 +16,8 @@ class Api {
       final Map<String, dynamic> jsonResponse = json.decode(response.body);
       tok1 = jsonResponse["Token"];
     } else {
-      throw Exception('Failed to calculate luas Segitiga');
+      final Map<String, dynamic> jsonResponse = json.decode(response.body);
+      eror2 = jsonResponse["Error"];
     }
 
     return response;
